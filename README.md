@@ -31,11 +31,14 @@ Trading Alarm es una aplicación profesional para traders que monitorea pares de
   - `pygame` (opcional para sonido)
 
 📦 Instalación
+Puedes instalarlo utilizando el archivo de instalacion msi.
+Descarguelo del siguiente enlace e instalelo.
+https://drive.google.com/file/d/1udYcqD_QAQjEYTBLCA9LIHz_kFUKwXXF/view?usp=drive_link
 
+O para mayor confianza puede revisar el codigo y ejecutarlo manualmente siguiendo los siguientes pasos:
 1. Clona el repositorio o descarga los archivos:
    ```bash
-   git clone https://github.com/tu-usuario/trading-alarm.git
-   cd trading-alarm
+   git clone https://github.com/eliaselp/BERLINTOWN-NOTIFIER.git
    ```
 
 2. Instala las dependencias:
@@ -45,8 +48,12 @@ Trading Alarm es una aplicación profesional para traders que monitorea pares de
 
 3. Ejecuta la aplicación:
    ```bash
-   python trading_alarm.py
+   python alarma.py
    ```
+4. Construir ejecutable:
+   ```bash
+   python setup.py bdist_msi
+   ```   
 
 🖥️ Guía de Uso de la Interfaz
 
