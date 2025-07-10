@@ -3,7 +3,7 @@ import os
 import uuid
 import datetime
 from cx_Freeze import setup, Executable
-
+#python setup.py bdist_msi
 # --------------------------------------------
 # CONFIGURACIÓN BÁSICA
 # --------------------------------------------
