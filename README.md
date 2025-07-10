@@ -2,8 +2,8 @@
  Sistema de Monitoreo de Señales Forex
 
 📈 Trading Alarm - Sistema de Monitoreo de Señales Forex
- 
-*(Imagen ilustrativa de la interfaz)*
+ ![Uploading image.png…]()
+
 
 🔍 Descripción
 
