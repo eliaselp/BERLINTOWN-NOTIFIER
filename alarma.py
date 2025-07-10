@@ -284,29 +284,35 @@ class TradingSignalController:
             
             # 4. Generar señales
             signals = []
-            
             # Señales basadas en día anterior
-            if (candles['penultimate']['high'] > previous_day['low'] and 
-                candles['last']['low'] < previous_day['low']):
-                signals.append("RUPTURA PDL (Previous Day Low)")
-                print("🚨 Señal detectada: RUPTURA PDL")
-            
-            if (candles['penultimate']['low'] < previous_day['high'] and 
-                candles['last']['high'] > previous_day['high']):
+            if ((candles['penultimate']['high'] >= previous_day['high'] and 
+                candles['penultimate']['low'] < previous_day['high']) or 
+                (candles['last']['high'] >= previous_day['high'] and 
+                candles['last']['low'] < previous_day['high'])):
                 signals.append("RUPTURA PDH (Previous Day High)")
                 print("🚨 Señal detectada: RUPTURA PDH")
-            
+
+            if ((candles['penultimate']['high'] > previous_day['low'] and 
+                candles['penultimate']['low'] <= previous_day['low']) or 
+                (candles['last']['high'] > previous_day['low'] and 
+                candles['last']['low'] <= previous_day['low'])):
+                signals.append("RUPTURA PDL (Previous Day Low)")
+                print("🚨 Señal detectada: RUPTURA PDL")
+
             # Señales basadas en sesión anterior
-            if (candles['penultimate']['high'] > previous_session['low'] and 
-                candles['last']['low'] < previous_session['low']):
-                signals.append("RUPTURA PSL (Previous Session Low)")
-                print("🚨 Señal detectada: RUPTURA PSL")
-            
-            if (candles['penultimate']['low'] < previous_session['high'] and 
-                candles['last']['high'] > previous_session['high']):
+            if ((candles['penultimate']['high'] >= previous_session['high'] and 
+                candles['penultimate']['low'] < previous_session['high']) or 
+                (candles['last']['high'] >= previous_session['high'] and 
+                candles['last']['low'] < previous_session['high'])):
                 signals.append("RUPTURA PSH (Previous Session High)")
                 print("🚨 Señal detectada: RUPTURA PSH")
-            
+
+            if ((candles['penultimate']['high'] > previous_session['low'] and 
+                candles['penultimate']['low'] <= previous_session['low']) or 
+                (candles['last']['high'] > previous_session['low'] and 
+                candles['last']['low'] <= previous_session['low'])):
+                signals.append("RUPTURA PSL (Previous Session Low)")
+                print("🚨 Señal detectada: RUPTURA PSL")
             if not signals:
                 print("🔍 No se detectaron señales de ruptura")
             
